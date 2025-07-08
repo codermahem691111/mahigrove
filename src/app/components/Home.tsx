@@ -172,7 +172,7 @@ export default function Home () {
                 </motion.div>
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900">Fresh Crab</h3>
-                  <p className="text-gray-600">Live mud crabs</p>
+                  <p className="text-gray-600">Live Testy crabs</p>
                   <p className="text-blue-600 font-semibold">$32.99/lb</p>
                 </div>
               </div>
