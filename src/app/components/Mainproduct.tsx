@@ -97,17 +97,7 @@ export default function ProductCardsSection() {
     }
   };
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut"
-      }
-    }
-  };
+ 
 
   return (
     <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">

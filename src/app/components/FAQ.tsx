@@ -148,7 +148,7 @@ const FAQSection = () => {
           className="mt-12 text-center"
         >
           <p className="text-gray-600">
-            Can't find what you're looking for?
+            Can`t find what you`re looking for?
           </p>
           <button className="mt-4 px-6 py-3 bg-gradient-to-r from-teal-600 to-blue-600 text-white rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300">
             Contact Support
