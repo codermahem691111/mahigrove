@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const TrustSection = () => {
   const trustItems = [
@@ -106,9 +107,11 @@ const TrustSection = () => {
                     className="relative mb-6"
                   >
                     <div className="w-[180px] h-[200px] mx-auto rounded-xl overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow duration-300">
-                      <img 
+                      <Image 
                         src={item.image} 
                         alt={item.title}
+                        width={180}
+                        height={200}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                       />
                     </div>

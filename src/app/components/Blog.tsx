@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Clock, User } from 'lucide-react';
+import Image from 'next/image';
 
 const BlogSection = () => {
   const blogs = [
@@ -66,9 +67,11 @@ const BlogSection = () => {
             >
               {/* Blog Image */}
               <div className="relative h-48 overflow-hidden">
-                <img
+                <Image
                   src={blog.image}
                   alt={blog.title}
+                  width={800}
+                  height={400}
                   className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
