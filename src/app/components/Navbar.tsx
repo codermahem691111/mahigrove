@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Search, User, Menu, X } from 'lucide-react';
+import Link from 'next/link';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,27 +21,27 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="/" className="flex items-center space-x-2 group">
+            <Link href="/" className="flex items-center space-x-2 group">
               <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
                 <span className="text-white font-bold text-lg">MhG</span>
               </div>
               <span className="text-2xl font-bold text-gray-800 group-hover:text-green-600 transition-colors duration-300">
                 Mahi Grove
               </span>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="ml-2 hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 className="relative text-gray-700 hover:text-green-600 font-medium transition-colors duration-300 group"
               >
                 {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -100,23 +101,23 @@ const Navbar = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
                   className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50 rounded-md transition-colors duration-300"
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
               
               {/* Mobile-only links */}
               <div className="border-t border-gray-200 pt-3 mt-3">
-                <a
+                <Link
                   href="/account"
                   className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50 rounded-md transition-colors duration-300"
                 >
                   My Account
-                </a>
+                </Link>
               </div>
             </div>
           </div>
