@@ -69,7 +69,7 @@ const Testimonials = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-green-600 to-blue-600 mx-auto rounded-full mb-8"></div>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Discover why our customers love MaheGrove's commitment to quality and sustainability
+            Discover why our customers love MaheGrove`s commitment to quality and sustainability
           </p>
         </motion.div>
 
