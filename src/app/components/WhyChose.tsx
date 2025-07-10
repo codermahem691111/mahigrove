@@ -44,18 +44,6 @@ const TrustSection = () => {
     }
   };
 
-  const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 15
-      }
-    }
-  };
 
   return (
     <div className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100">
