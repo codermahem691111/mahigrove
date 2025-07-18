@@ -9,7 +9,6 @@ const BlogSection = () => {
       id: 1,
       title: 'The Health Benefits of Pure Mangrove Honey',
       excerpt: 'Discover why mangrove honey is considered a superfood and how it can boost your immune system naturally.',
-      image: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=800&h=400&fit=crop',
       author: 'Dr. Sarah Williams',
       readTime: '5 min read',
       category: 'Health & Wellness'
@@ -18,7 +17,6 @@ const BlogSection = () => {
       id: 2,
       title: 'Perfect Mud Crab Cooking Guide',
       excerpt: 'Learn the secrets of preparing restaurant-quality mud crab dishes with our step-by-step cooking guide.',
-      image: 'https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=800&h=400&fit=crop',
       author: 'Chef Michael Chen',
       readTime: '8 min read',
       category: 'Cooking Tips'
@@ -27,12 +25,22 @@ const BlogSection = () => {
       id: 3,
       title: 'Sustainable Seafood: A Guide to Responsible Choices',
       excerpt: 'Understanding the importance of sustainable fishing and how to make environmentally conscious seafood choices.',
-      image: 'https://images.unsplash.com/photo-1498654200943-1088dd4438ae?w=800&h=400&fit=crop',
       author: 'Marine Biologist Emma Cooper',
       readTime: '6 min read',
       category: 'Sustainability'
     }
   ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
 
   return (
     <section className="py-20 bg-gradient-to-br from-white to-blue-50">
@@ -55,7 +63,13 @@ const BlogSection = () => {
         </motion.div>
 
         {/* Blog Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {blogs.map((blog) => (
             <motion.article
               key={blog.id}
@@ -65,44 +79,45 @@ const BlogSection = () => {
               whileHover={{ y: -5 }}
               className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              {/* Blog Image */}
-              <div className="relative h-48 overflow-hidden">
-                <Image
-                  src={blog.image}
-                  alt={blog.title}
-                  width={800}
-                  height={400}
-                  className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                  <span className="text-sm font-medium text-blue-600">{blog.category}</span>
-                </div>
-              </div>
-
               {/* Blog Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 hover:text-blue-600 transition-colors duration-300">
-                  {blog.title}
-                </h3>
-                <p className="text-gray-600 mb-4 line-clamp-2">{blog.excerpt}</p>
-
-                {/* Meta Information */}
-                <div className="flex items-center text-sm text-gray-500 mb-4">
-                  <User size={16} className="mr-1" />
-                  <span className="mr-4">{blog.author}</span>
-                  <Clock size={16} className="mr-1" />
-                  <span>{blog.readTime}</span>
+                <div className="flex items-center mb-4">
+                  <span className="bg-blue-100 text-blue-600 text-xs font-medium px-3 py-1 rounded-full">
+                    {blog.category}
+                  </span>
                 </div>
 
-                {/* Read More Button */}
-                <button className="group flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-300">
-                  Read More
-                  <ArrowRight size={16} className="ml-2 group-hover:translate-x-2 transition-transform duration-300" />
-                </button>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+                  {blog.title}
+                </h3>
+                
+                <p className="text-gray-600 mb-4 line-clamp-3">
+                  {blog.excerpt}
+                </p>
+
+                <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                  <div className="flex items-center space-x-2">
+                    <User className="w-4 h-4" />
+                    <span>{blog.author}</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Clock className="w-4 h-4" />
+                    <span>{blog.readTime}</span>
+                  </div>
+                </div>
+
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex items-center space-x-2 text-green-600 hover:text-green-700 font-semibold transition-colors"
+                >
+                  <span>Read More</span>
+                  <ArrowRight className="w-4 h-4" />
+                </motion.button>
               </div>
             </motion.article>
           ))}
-        </div>
+        </motion.div>
 
         {/* View All Button */}
         <motion.div

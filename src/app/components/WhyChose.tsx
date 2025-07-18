@@ -5,28 +5,24 @@ import Image from 'next/image';
 const TrustSection = () => {
   const trustItems = [
     {
-      image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=300&h=300&fit=crop&crop=center',
       title: '100% Natural & Organic',
       description: 'Certified organic produce with no harmful chemicals or pesticides',
       color: 'from-green-400 to-emerald-500',
       bgColor: 'bg-green-50'
     },
     {
-      image: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=300&h=300&fit=crop&crop=center',
       title: 'Sourced from Local Farmers',
       description: 'Direct partnerships with trusted local farmers in your region',
       color: 'from-blue-400 to-cyan-500',
       bgColor: 'bg-blue-50'
     },
     {
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop&crop=center',
       title: 'Fast Delivery',
       description: 'Same-day delivery to keep your produce fresh and crisp',
       color: 'from-orange-400 to-red-500',
       bgColor: 'bg-orange-50'
     },
     {
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=300&h=300&fit=crop&crop=center',
       title: 'Money-Back Guarantee',
       description: '100% satisfaction guaranteed or your money back, no questions asked',
       color: 'from-purple-400 to-pink-500',
@@ -106,14 +102,8 @@ const TrustSection = () => {
                     transition={{ duration: 0.4 }}
                     className="relative mb-6"
                   >
-                    <div className="w-[180px] h-[200px] mx-auto rounded-xl overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow duration-300">
-                      <Image 
-                        src={item.image} 
-                        alt={item.title}
-                        width={180}
-                        height={200}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                      />
+                    <div className="w-[180px] h-[200px] mx-auto rounded-xl overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow duration-300 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+                      <div className="text-4xl text-gray-400">🌿</div>
                     </div>
                     {/* Decorative border */}
                     <div className="absolute inset-0 w-20 h-20 mx-auto rounded-xl border-2 border-white/30 group-hover:border-white/60 transition-colors duration-300"></div>

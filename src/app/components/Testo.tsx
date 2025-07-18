@@ -8,7 +8,6 @@ const Testimonials = () => {
       id: 1,
       name: 'Sarah Johnson',
       role: 'Food Enthusiast',
-      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face',
       content: 'The quality of honey from MaheGrove is exceptional! You can really taste the difference in their pure, unfiltered products. The sustainable packaging is a great bonus.',
       rating: 5
     },
@@ -16,7 +15,6 @@ const Testimonials = () => {
       id: 2,
       name: 'Michael Chen',
       role: 'Chef',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
       content: 'As a professional chef, I`m very particular about my seafood. MaheGrove`s tiger prawns are consistently fresh and of the highest quality. Their commitment to sustainable sourcing is commendable.',
       rating: 5
     },
@@ -24,7 +22,6 @@ const Testimonials = () => {
       id: 3,
       name: 'Emily Rodriguez',
       role: 'Health Coach',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face',
       content: 'I recommend MaheGrove to all my clients. Their products are not only delicious but also ethically sourced. The mangrove honey has become a staple in my kitchen.',
       rating: 5
     }
@@ -89,12 +86,12 @@ const Testimonials = () => {
               whileHover={{ y: -5 }}
             >
               <div className="flex items-center mb-6">
-                <motion.img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-16 h-16 rounded-full object-cover border-2 border-green-500"
+                <motion.div
+                  className="w-16 h-16 rounded-full border-2 border-green-500 bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center"
                   whileHover={{ scale: 1.1 }}
-                />
+                >
+                  <div className="text-2xl">👤</div>
+                </motion.div>
                 <div className="ml-4">
                   <h4 className="text-xl font-semibold text-gray-900">{testimonial.name}</h4>
                   <p className="text-green-600">{testimonial.role}</p>

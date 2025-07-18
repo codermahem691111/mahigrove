@@ -1,6 +1,5 @@
 #hero {
- 
-    background-image: url('../assets/home/hero.jpg');
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -9,16 +8,12 @@
 
 @media (min-width: 768px) {
   .hero-section-responsive {
-    background-image: url('../assets/home/hero.jpg');
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   }
 }
 
 @media (min-width: 1024px) {
   .hero-section-responsive {
-    background-image: url('../assets/home/hero.jpg');
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   }
-
-
-
-
 }
