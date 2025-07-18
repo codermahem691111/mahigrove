@@ -6,6 +6,12 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
+  const productLinks = [
+    { name: 'Fresh Shrimp', href: '/products/shrimp' },
+    { name: 'Blue Crab', href: '/products/crab' },
+    { name: 'Pure Honey', href: '/products/honey' },
+  ];
+
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'Products', href: '/products' },
@@ -68,9 +74,9 @@ const Navbar = () => {
             </button>
 
             {/* User Account */}
-            <button className="p-2 text-gray-700 hover:text-green-600 transition-colors duration-300">
+            <Link href="/signuplogin" className="p-2 text-gray-700 hover:text-green-600 transition-colors duration-300">
               <User className="h-6 w-6" />
-            </button>
+            </Link>
 
             {/* Mobile Menu Toggle */}
             <button
@@ -113,10 +119,10 @@ const Navbar = () => {
               {/* Mobile-only links */}
               <div className="border-t border-gray-200 pt-3 mt-3">
                 <Link
-                  href="/account"
+                  href="/signuplogin"
                   className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50 rounded-md transition-colors duration-300"
                 >
-                  My Account
+                  Sign In / Sign Up
                 </Link>
               </div>
             </div>
